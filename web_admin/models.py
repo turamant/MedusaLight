@@ -2,14 +2,14 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
-
 class New(models.Model):
     '''New - сущность новость'''
+
     class Meta:
         db_table = 'news'
         verbose_name_plural = 'Новости'
         verbose_name = 'Новость'
-        ordering = ("public_date",)
+        ordering = ("-date",)
 
     date = models.DateField(verbose_name='Дата (d-M-Y)')
     subject = models.CharField(verbose_name='Заголовок новости', max_length=256)
